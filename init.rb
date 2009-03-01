@@ -21,5 +21,5 @@ Redmine::Plugin.register :redmine_task_board do
     permission :update_task_boards, :task_boards => :update_status
   end
   
-  menu :project_menu, :task_board, {:controller => 'task_boards', :action => 'show'}, :before => :burndown, :caption => 'Task Board'
+  menu :project_menu, :task_board, {:controller => 'task_boards', :action => 'show'}, :param => :project_id, :before => :burndown, :caption => 'Task Board'
 end
