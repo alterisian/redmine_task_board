@@ -1,1 +1,2 @@
-map.show_task_board 'versions/task_board/:id', :controller => 'task_boards', :action => 'show'
+map.latest_task_board 'projects/:project_id/burndowns/:id', :controller => 'burndowns', :action => 'show'
+map.show_task_board 'projects/:project_id/burndowns/:id', :controller => 'burndowns', :action => 'show'
