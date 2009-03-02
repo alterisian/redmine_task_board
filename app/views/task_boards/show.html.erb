@@ -70,7 +70,7 @@
 
 <% content_for :sidebar do -%>
   <h3><%= l(:label_version_plural) %></h3>
-  <ul id="sprint_burndown_list">
+  <ul id="sprint_taskboard_list">
     <% @project.versions.each do |version| -%>
       <li<%= %Q[ class="selected"] if @version == version %>><%= link_to(version.name, show_task_board_path(:project_id => @project, :id => version)) %></li>
     <% end -%>
