@@ -1,7 +1,6 @@
 require 'redmine'
 
 require_dependency 'scrum_alliance/redmine/issue_status_extensions'
-require_dependency 'scrum_alliance/redmine/project_extensions'
 
 # Dependency loading hell. http://www.ruby-forum.com/topic/166578#new
 require 'dispatcher'
