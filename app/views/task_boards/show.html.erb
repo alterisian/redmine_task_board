@@ -29,6 +29,10 @@
   <style type="text/css" media="screen">
     #task_board tr th { width: <%= 100 / (@statuses.size + 1) %>%;}
   </style>
+  <%= stylesheet_link_tag 'context_menu' %>
+  <%= javascript_include_tag 'context_menu' %>
+  <%= javascript_include_tag 'task_board_context_menu', :plugin => 'redmine_task_board' %>
+
 <% end %>
 
 
@@ -67,6 +71,8 @@
     <% end -%>
   </tbody>
 </table>
+<div id="context-menu" style="display: none;"></div>
+<%= javascript_tag "new TaskBoardContextMenu('#{url_for(:controller => 'issues', :action => 'context_menu')}')" %>
 
 <% content_for :sidebar do -%>
   <h3><%= l(:label_version_plural) %></h3>
