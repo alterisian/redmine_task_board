@@ -37,9 +37,28 @@
   <thead>
     <tr>
       <% if (@stories_with_tasks.keys - [nil]).size > 0 -%><th>&nbsp;</th><% end -%>
-      
+        <% @stories_with_tasks.each do |story, tasks_by_status| %>
       <% @statuses.each do |status| %>
-        <th><%= status.name %></th>
+            <th><%= status.name %>:
+            <span id="<%= task_board_dom_id(story, status, 'count') %>"><%= Array(tasks_by_status[status]).length %></span>
+            [<span id="<%= "#{status.class_name}_limit" %>"><% if @limits && @limits[status.id] %>
+            <%= link_to_remote( @limits[status.id].first.limit,
+                        :url =>{
+                                :controller => 'limits',
+                                :action => :edit,
+                                :id => @limits[status.id].first.id
+                        }) %>
+            <% else -%>
+            <%= link_to_remote( "0",
+                        :url =>{
+                                :controller => 'limits',
+                                :action => :edit,
+                                :project => @project.id,
+                                :status => status.id
+                        }) %>
+            <% end -%></span>]
+            </th>
+          <% end -%>
       <% end -%>
     </tr>
   </thead>
