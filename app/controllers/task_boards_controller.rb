@@ -38,8 +38,22 @@ class TaskBoardsController < ApplicationController
   
 private
   def find_version_and_project
+
     @project = Project.find(params[:project_id])
-    @version = params[:id] ? @project.versions.find(params[:id]) : @project.current_version
+    
+    if params.key?(:id)
+      @version = @project.versions.find(params[:id])
+      
+    else
+      
+      if @project.current_version
+        @version = @project.current_version
+      elsif @project.versions.size > 0
+        @version = @project.versions.first
+      end
+      
+    end
+
     render_error(l(:task_board_text_no_sprint)) and return unless @version
   end
 end
