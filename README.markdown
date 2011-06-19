@@ -1,5 +1,7 @@
 # Redmine Task Board
 
+Atention: not compatible with 1.1.x or 1.2.x yet...
+
 ## Introduction
 
 This plugin adds a 'Task Board' tab to your Project Menu for any Project with the 'Task Boards' module enabled (Settings>Modules). This tab will show the Task Board for the current Sprint (cough Version cough). 
