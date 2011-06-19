@@ -38,6 +38,7 @@ class TaskBoardsController < ApplicationController
   
 private
   def find_version_and_project
+<<<<<<< HEAD
 
     @project = Project.find(params[:project_id])
     
@@ -54,6 +55,10 @@ private
       
     end
 
+=======
+    @project = Project.find(params[:id])
+    @version = @project.current_version
+>>>>>>> tastapod/master
     render_error(l(:task_board_text_no_sprint)) and return unless @version
   end
 end

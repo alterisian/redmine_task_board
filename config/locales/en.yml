@@ -1,4 +1,5 @@
 # English strings go here
 en:
   task_board: "Task Board"
+  my_label: "My label"
   task_board_text_no_sprint: There is no current Sprint for this Project
