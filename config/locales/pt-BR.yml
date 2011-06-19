@@ -1,0 +1,5 @@
+# English strings go here
+pt-BR:
+  task_board: "Quadro de Tarefas"
+  my_label: "My label"
+  task_board_text_no_sprint: Não existe nenhum Sprint para este Projeto
