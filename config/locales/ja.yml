@@ -1,0 +1,4 @@
+# Japanese strings go here
+ja:
+  task_board: "タスクボード"
+  task_board_text_no_sprint: プロジェクトには実行中のスプリントがありません。バージョンの期限日を確認してください。

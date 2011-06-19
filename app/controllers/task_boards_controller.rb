@@ -6,7 +6,7 @@ class TaskBoardsController < ApplicationController
   
   def show
     @statuses = IssueStatus.all(:order => "position asc")
-
+ 
     fixed_issues = @version.fixed_issues
     @stories_with_tasks = (Issue.instance_methods.include?("story")) ? fixed_issues.group_by(&:story) : { nil => fixed_issues }
     
@@ -24,7 +24,7 @@ class TaskBoardsController < ApplicationController
     
     @issue = Issue.find(params[:id])
     @issue.init_journal(User.current, "Automated status change from the Task Board")
-
+ 
     attrs = {:status_id => @status.id}
     attrs.merge!(:assigned_to_id => User.current.id) unless @issue.assigned_to_id?
     @issue.update_attributes(attrs)

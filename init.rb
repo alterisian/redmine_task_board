@@ -12,7 +12,7 @@ Redmine::Plugin.register :redmine_task_board do
   name 'Redmine Task Board plugin'
   author 'Dan Hodos'
   description "Creates a drag 'n' drop task board of the items in the current version and their status"
-  version '1.0.0'
+  version '1.1.0-daipresents'
 
   project_module :task_boards do  
     permission :view_task_boards, :task_boards => :show
