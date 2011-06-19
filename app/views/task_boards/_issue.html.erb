@@ -1,5 +1,6 @@
 <li id="<%= dom_id(issue) %>" class="<%= status_classes_for(issue, User.current) %> hascontextmenu">
   <p><%= link_to_issue(issue) %>: <%=h issue.subject %></p>
+  <p><%= issue.created_on.to_s(:short) %></p>
   <%= progress_bar issue.done_ratio, :width => '50px', :legend => "#{issue.assigned_to} [#{issue.estimated_hours}]" || "&nbsp;" %>
 </li>
 <%= draggable_element(dom_id(issue), :revert => '"failure"', :constraint => "'horizontal'") %>
